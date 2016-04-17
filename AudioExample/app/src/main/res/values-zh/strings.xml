@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AudioExample</string>
+    <string name="play">播放</string>
+    <string name="stop">停止</string>
+    <string name="desc">一首伤心的歌.</string>
+
+</resources>
