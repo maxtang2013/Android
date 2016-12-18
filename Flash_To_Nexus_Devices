@@ -1,0 +1,30 @@
+To flash a system image:
+
+Download the appropriate system image for your device below, then unzip it to a safe directory.
+Connect your device to your computer over USB.
+Start the device in fastboot mode with one of the following methods:
+
+Using the adb tool: With the device powered on, execute:
+
+adb reboot bootloader
+Using a key combo: Turn the device off, then turn it on and immediately hold down the relevant key combination for your device. For example, to put a Nexus 5 ("hammerhead") into fastboot mode, press and hold Volume Up + Volume Down + Power as the device begins booting up.
+If necessary, unlock the device's bootloader by running:
+
+fastboot flashing unlock
+or, for older devices, run:
+
+fastboot oem unlock
+The target device will show you a confirmation screen. (This erases all data on the target device.)
+Open a terminal and navigate to the unzipped system image directory.
+Execute the flash-all script. This script installs the necessary bootloader, baseband firmware(s), and operating system.
+Once the script finishes, your device reboots. You should now lock the bootloader for security:
+
+Start the device in fastboot mode again, as described above.
+Execute:
+
+fastboot flashing lock
+or, for older devices, run:
+
+fastboot oem lock
+Locking bootloader will wipe the data on some devices. After locking the bootloader, if you want to flash the device again, you must run fastboot oem unlock again, which will wipe the data.
+
